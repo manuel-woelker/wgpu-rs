@@ -36,7 +36,7 @@ pub use wgt::{
     BlendFactor, BlendOperation, BufferAddress, BufferSize, BufferUsage, Color,
     ColorStateDescriptor, ColorWrite, CommandBufferDescriptor, CompareFunction, CullMode,
     DepthStencilStateDescriptor, DeviceDescriptor, DynamicOffset, Extent3d, Features, FilterMode,
-    FrontFace, IndexFormat, InputStepMode, Limits, Origin3d, PowerPreference, PresentMode,
+    FrontFace, IndexFormat, InputStepMode, Limits, Origin3d, PolygonMode, PowerPreference, PresentMode,
     PrimitiveTopology, PushConstantRange, RasterizationStateDescriptor, ShaderLocation,
     ShaderStage, StencilOperation, StencilStateDescriptor, StencilStateFaceDescriptor,
     SwapChainDescriptor, SwapChainStatus, TextureAspect, TextureComponentType, TextureDataLayout,

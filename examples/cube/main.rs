@@ -3,6 +3,7 @@ mod framework;
 
 use bytemuck::{Pod, Zeroable};
 use wgpu::util::DeviceExt;
+use wgpu::Features;
 
 #[repr(C)]
 #[derive(Clone, Copy)]
@@ -113,6 +114,8 @@ impl Example {
 }
 
 impl framework::Example for Example {
+
+
     fn init(
         sc_desc: &wgpu::SwapChainDescriptor,
         device: &wgpu::Device,
@@ -262,6 +265,7 @@ impl framework::Example for Example {
             rasterization_state: Some(wgpu::RasterizationStateDescriptor {
                 front_face: wgpu::FrontFace::Ccw,
                 cull_mode: wgpu::CullMode::Back,
+                polygon_mode: wgpu::PolygonMode::Line,
                 ..Default::default()
             }),
             primitive_topology: wgpu::PrimitiveTopology::TriangleList,
@@ -360,6 +364,11 @@ impl framework::Example for Example {
 
         queue.submit(Some(encoder.finish()));
     }
+
+    fn required_features() -> Features {
+        Features::NON_FILL_POLYGON_MODE
+    }
+
 }
 
 fn main() {
